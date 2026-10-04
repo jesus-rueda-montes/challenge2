@@ -1,0 +1,9 @@
+# Entorno
+.venv/
+.env
+__pycache__/
+*.pyc
+
+# Estado y salida de ejecución: se generan desde cero en cada lote
+salida/
+estado/
