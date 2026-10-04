@@ -37,7 +37,7 @@ _PIDE_DOCS = re.compile(r"documentacion|nota simple|certificado|enlace|planos|do
 _RECHAZA_WHATSAPP = re.compile(r"(por )?whatsapp no|no (uso|tengo) (el )?whatsapp|el whatsapp no")
 _DOCS_ENVIADOS = re.compile(r"te lo (acabo de|he) envia|te la (acabo de|he) envia|ya te lo he mandado|enviado")
 _PIDE_CALLBACK = re.compile(
-    r"(me )?(puedes|podeis|puede) llamar|llamame|llamadme|llameme|vuelve a llamar|volved a llamar|"
+    r"(me )?(puedes|podeis|puede) llamar|me llamas|me llamais|llamame|llamadme|llameme|vuelve a llamar|volved a llamar|"
     r"mejor (luego|mas tarde|manana)"
 )
 _DESPEDIDA = re.compile(r"adios|hasta luego|un saludo|gracias|buen dia|buenas tardes|hasta pronto|chao")
@@ -137,9 +137,10 @@ class ClasificadorSimulado:
         if _PIDE_CALLBACK.search(lead):
             texto_momento = slots.get("callback_when_raw") or texto_lead_original
             momento = _resolver_momento(texto_momento, ahora)
+            cuando = slots.get("callback_when_raw") or (momento.strftime("%d/%m %H:%M") if momento else "sin hora concreta")
             return salida(
                 "callback",
-                f"el lead pide que se le llame en otro momento ({slots.get('callback_when_raw') or 'sin hora concreta'})",
+                f"el lead pide que se le llame en otro momento ({cuando})",
                 0.75,
                 callback_solicitado=momento.strftime("%Y-%m-%dT%H:%M") if momento else None,
                 callback_texto=slots.get("callback_when_raw"),

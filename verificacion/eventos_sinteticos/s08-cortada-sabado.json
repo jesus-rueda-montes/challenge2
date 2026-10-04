@@ -1,0 +1,71 @@
+{
+  "event_id": "evt_s08",
+  "type": "call.ended",
+  "occurred_at": "2026-09-19T13:50:00+02:00",
+  "organization_id": "org_demo_a",
+  "idempotency_key": "lk-sint-008",
+  "delivery_attempt": 1,
+  "campaign": {
+    "system_key": "first_touch_voice",
+    "entry_id": "ce_c_9008"
+  },
+  "lead": {
+    "contact_id": "c_9008",
+    "phone": "+34600999008",
+    "full_name": "Lead Sintético",
+    "lead_source": "idealista",
+    "property_ref": "RIB-9000",
+    "property_address": "calle Falsa 1, Madrid",
+    "language": "es"
+  },
+  "telephony": {
+    "provider": "livekit_sip",
+    "call_id": "lk-sint-008",
+    "provider_call_id": null,
+    "dialed_at": "2026-09-19T13:50:00+02:00",
+    "ringing_at": null,
+    "answered_at": "2026-09-19T13:50:00+02:00",
+    "ended_at": "2026-09-19T13:50:00+02:00",
+    "sip_status_code": 200,
+    "sip_status": "OK",
+    "disconnect_reason": "CLIENT_INITIATED",
+    "hung_up_by": null,
+    "duration_seconds": 26,
+    "amd": {
+      "result": "human",
+      "greeting_transcript": null,
+      "detected_at_secs": null,
+      "source": "livekit_amd"
+    }
+  },
+  "transcript": [
+    {
+      "role": "agent",
+      "message": "Hola, muy buenas. ¿Hablo con el titular?",
+      "time_in_call_secs": 2
+    },
+    {
+      "role": "user",
+      "message": "Sí, soy yo.",
+      "time_in_call_secs": 8
+    },
+    {
+      "role": "agent",
+      "message": "¿Buscas para comprar o alquilar?",
+      "time_in_call_secs": 14
+    },
+    {
+      "role": "user",
+      "message": "Para alquilar, en la zona de…",
+      "time_in_call_secs": 20
+    }
+  ],
+  "agent_outcome": {
+    "appointment": null,
+    "slots_snapshot": {
+      "operacion": "alquiler"
+    }
+  },
+  "recording": null,
+  "metrics": null
+}

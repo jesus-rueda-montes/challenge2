@@ -10,3 +10,6 @@ estado/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Ejecuciones del verificador
+verificacion/.ejecucion/

@@ -1,0 +1,21 @@
+{
+  "event_id": "evt_s20",
+  "type": "message.received",
+  "occurred_at": "2026-09-18T18:05:00+02:00",
+  "organization_id": "org_demo_a",
+  "idempotency_key": "wa-s14",
+  "delivery_attempt": 1,
+  "campaign": {
+    "system_key": "first_touch_voice",
+    "entry_id": "ce_c_9003"
+  },
+  "lead": {
+    "contact_id": "c_9003",
+    "phone": "+34600999003",
+    "language": "es"
+  },
+  "message": {
+    "channel": "whatsapp",
+    "text": "Hola, ¿al final qué?"
+  }
+}

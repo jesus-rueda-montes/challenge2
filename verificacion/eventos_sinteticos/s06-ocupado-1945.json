@@ -1,0 +1,48 @@
+{
+  "event_id": "evt_s06",
+  "type": "call.ended",
+  "occurred_at": "2026-09-18T19:45:00+02:00",
+  "organization_id": "org_demo_a",
+  "idempotency_key": "lk-sint-006",
+  "delivery_attempt": 1,
+  "campaign": {
+    "system_key": "first_touch_voice",
+    "entry_id": "ce_c_9006"
+  },
+  "lead": {
+    "contact_id": "c_9006",
+    "phone": "+34600999006",
+    "full_name": "Lead Sintético",
+    "lead_source": "idealista",
+    "property_ref": "RIB-9000",
+    "property_address": "calle Falsa 1, Madrid",
+    "language": "es"
+  },
+  "telephony": {
+    "provider": "livekit_sip",
+    "call_id": "lk-sint-006",
+    "provider_call_id": null,
+    "dialed_at": "2026-09-18T19:45:00+02:00",
+    "ringing_at": null,
+    "answered_at": null,
+    "ended_at": "2026-09-18T19:45:00+02:00",
+    "sip_status_code": 486,
+    "sip_status": "Busy Here",
+    "disconnect_reason": "USER_REJECTED",
+    "hung_up_by": null,
+    "duration_seconds": 0,
+    "amd": {
+      "result": "not_run",
+      "greeting_transcript": null,
+      "detected_at_secs": null,
+      "source": "none"
+    }
+  },
+  "transcript": [],
+  "agent_outcome": {
+    "appointment": null,
+    "slots_snapshot": {}
+  },
+  "recording": null,
+  "metrics": null
+}

@@ -1,0 +1,48 @@
+{
+  "event_id": "evt_s26",
+  "type": "call.ended",
+  "occurred_at": "2026-09-18T10:00:00+02:00",
+  "organization_id": "org_demo_a",
+  "idempotency_key": "lk-sint-026",
+  "delivery_attempt": 1,
+  "campaign": {
+    "system_key": "first_touch_voice",
+    "entry_id": "ce_c_9022"
+  },
+  "lead": {
+    "contact_id": "c_9022",
+    "phone": "+34600999022",
+    "full_name": "Lead Sintético",
+    "lead_source": "idealista",
+    "property_ref": "RIB-9000",
+    "property_address": "calle Falsa 1, Madrid",
+    "language": "es"
+  },
+  "telephony": {
+    "provider": "livekit_sip",
+    "call_id": "lk-sint-026",
+    "provider_call_id": null,
+    "dialed_at": "2026-09-18T10:00:00+02:00",
+    "ringing_at": null,
+    "answered_at": "2026-09-18T10:00:00+02:00",
+    "ended_at": "2026-09-18T10:00:00+02:00",
+    "sip_status_code": 200,
+    "sip_status": "OK",
+    "disconnect_reason": "ROOM_DELETED",
+    "hung_up_by": "agent",
+    "duration_seconds": 2,
+    "amd": {
+      "result": "machine-unavailable",
+      "greeting_transcript": "El número marcado no está disponible.",
+      "detected_at_secs": null,
+      "source": "livekit_amd"
+    }
+  },
+  "transcript": [],
+  "agent_outcome": {
+    "appointment": null,
+    "slots_snapshot": {}
+  },
+  "recording": null,
+  "metrics": null
+}

@@ -1,0 +1,21 @@
+{
+  "event_id": "evt_s25",
+  "type": "message.received",
+  "occurred_at": "2026-09-18T19:00:00+02:00",
+  "organization_id": "org_demo_b",
+  "idempotency_key": "wa-s21",
+  "delivery_attempt": 1,
+  "campaign": {
+    "system_key": "first_touch_voice",
+    "entry_id": "ce_c_9019"
+  },
+  "lead": {
+    "contact_id": "c_9019",
+    "phone": "+34600999019",
+    "language": "es"
+  },
+  "message": {
+    "channel": "whatsapp",
+    "text": "Hola"
+  }
+}
