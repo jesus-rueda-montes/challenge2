@@ -7,3 +7,6 @@ __pycache__/
 # Estado y salida de ejecución: se generan desde cero en cada lote
 salida/
 estado/
+
+# Jupyter
+.ipynb_checkpoints/
