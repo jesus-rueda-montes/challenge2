@@ -13,3 +13,6 @@ estado/
 
 # Ejecuciones del verificador
 verificacion/.ejecucion/
+
+# Exportación local de la conversación (no se publica)
+PromptsClaudeCode/

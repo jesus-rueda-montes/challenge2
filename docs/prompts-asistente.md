@@ -2,8 +2,7 @@
 
 Asistente: **Claude Code** (Claude Opus). Se usó para analizar el enunciado, proponer un plan y
 escribir el código bajo revisión. El modelo que usa *el sistema* en ejecución es de OpenAI (ver
-README). Aquí están los mensajes tal y como los escribí, en orden. La conversación completa exportada
-(respuestas y herramientas incluidas) está en [PromptsClaudeCode/](../PromptsClaudeCode/conversacion.md).
+README). Aquí están los mensajes tal y como los escribí, en orden.
 
 ---
 
