@@ -77,7 +77,7 @@ def planificar_llamada(evento: Evento, c: Clasificacion, lead: ContextoLead, cfg
         "status": STATUS_POR_ETIQUETA[etiqueta],
         "etiqueta": etiqueta,
         "motivo": c.motivo,
-        "confianza": c.confianza,
+        "confianza": round(c.confianza, 2),  # el mismo valor que la línea de decisiones.jsonl
         "duration_seconds": evento.telephony.duration_seconds,
     }))
 

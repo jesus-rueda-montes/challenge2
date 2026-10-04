@@ -45,7 +45,9 @@ class SalidaClasificador(BaseModel):
     razonamiento: str = Field(description="Una o dos frases citando la frase decisiva.")
     etiqueta: EtiquetaConversacion
     motivo: str = Field(description="Una frase en español que explica la etiqueta.")
-    confianza: float = Field(ge=0, le=1)
+    # Sin ge/le a propósito: el modo estricto de OpenAI no admite minimum/maximum en todas las
+    # versiones. El rango [0, 1] se garantiza al convertir (a_clasificacion).
+    confianza: float = Field(description="Entre 0 y 1.")
     callback_solicitado: str | None = Field(
         description="YYYY-MM-DDTHH:MM local Europe/Madrid, solo si etiqueta=callback y hay momento."
     )
@@ -102,7 +104,11 @@ class ClasificadorLLM:
         from langchain_openai import ChatOpenAI
 
         self.nombre = modelo
-        llm = ChatOpenAI(model=modelo, temperature=0, timeout=30, max_retries=2)
+        # Los modelos de razonamiento (gpt-5*, o*) rechazan `temperature`; el resto, a 0 para
+        # que la misma llamada dé la misma etiqueta.
+        razonamiento = modelo.startswith(("gpt-5", "o1", "o3", "o4"))
+        opciones = {} if razonamiento else {"temperature": 0}
+        llm = ChatOpenAI(model=modelo, timeout=30, max_retries=2, **opciones)
         # method="json_schema" usa Structured Outputs de OpenAI: el modelo no puede devolver una
         # etiqueta fuera del enum ni omitir campos.
         self._llm = llm.with_structured_output(SalidaClasificador, method="json_schema", strict=True)
@@ -128,7 +134,7 @@ def a_clasificacion(salida: SalidaClasificador, fuente: str, cfg: Config) -> Cla
     return Clasificacion(
         etiqueta=salida.etiqueta,
         motivo=salida.motivo,
-        confianza=salida.confianza,
+        confianza=min(max(salida.confianza, 0.0), 1.0),
         fuente=fuente,
         callback_solicitado=callback,
         callback_texto=salida.callback_texto,
