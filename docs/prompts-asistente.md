@@ -45,3 +45,12 @@ la herramienta de desarrollo. El enunciado incluso pide los prompts dados al asi
 *Resultado:* el clasificador simulado
 ([simulado.py](../orquestador/clasificacion/simulado.py)), que se selecciona solo cuando no hay
 clave, y el desarrollo por pasos con un commit por bloque.
+
+**5. Comprobación final**
+
+> realiza una ultima comprobación de que todo está bien y se cumplen las especificaciones del enunciado
+
+*Resultado:* auditoría requisito a requisito, clon limpio con instalación desde
+`requirements.txt` y verificación completa. Se corrigieron dos riesgos de la ruta LLM (esquema
+estricto sin `minimum`/`maximum`; sin `temperature` en modelos de razonamiento) y la confianza
+de `cerrar_llamada` se alineó con la de la decisión.

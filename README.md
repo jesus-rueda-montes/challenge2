@@ -5,6 +5,8 @@ Recibe **un evento** (`call.ended` o `message.received`), decide **una etiqueta*
 
 ## Cómo se ejecuta
 
+Requiere Python ≥ 3.10 (probado con 3.13).
+
 ```bash
 python -m venv .venv && .venv/Scripts/activate        # Linux/macOS: source .venv/bin/activate
 pip install -r requirements.txt
